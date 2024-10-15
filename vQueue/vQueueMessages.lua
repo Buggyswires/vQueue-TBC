@@ -401,6 +401,25 @@ CATARGS = {
 	["mt"]={
 		"mt",
 	},
+	["kara"]={
+		"kara",
+		"karazhan"
+	},
+	["gruul"]={
+		"gruul",
+	},
+	["maggy"]={
+		"maggy",
+		"magtheridon"
+	},
+	["ssc"]={
+		"ssc",
+		"serpentshrine"
+	},
+	["eye"]={
+		"tk",
+		"tempest keep"
+	},
 }
 
 local function MergeTables(a, b)
@@ -512,7 +531,6 @@ MINLVLS["strat"] = 58
 MINLVLS["scholo"] = 58
 
 -- TBC
-
 MINLVLS["ramp"] = 59
 MINLVLS["bf"] = 60
 MINLVLS["sp"] = 61
@@ -529,3 +547,10 @@ MINLVLS["sh"] = 69
 MINLVLS["arca"] = 69
 MINLVLS["bota"] = 69
 MINLVLS["mt"] = 70 
+
+-- raids TBC--
+MINLVLS["kara"] = 70
+MINLVLS["gruul"] = 70
+MINLVLS["maggy"] = 70
+MINLVLS["ssc"] = 70
+MINLVLS["eye"] = 70

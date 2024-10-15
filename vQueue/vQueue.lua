@@ -315,14 +315,20 @@ function vQueue_OnEvent(event)
 			BZ["Ruins of Ahn'Qiraj"]..":ruins",
 			BZ["Blackwing Lair"]..":bwl",
 			BZ["Temple of Ahn'Qiraj"]..":temple",
-			BZ["Naxxramas"]..":naxx"
+			BZ["Naxxramas"]..":naxx",
+			BZ["Karazhan"]..":kara",
+			BZ["Serpentshrine Cavern"]..":ssc",
+			BZ["The Eye"]..":eye",
+			BZ["Gruul's Lair"]..":gruul",
+			BZ["Magtheridon's Lair"]..":maggy"
 		}
+		
 		categories[L["Battlegrounds"]] =
 		{
 			expanded = false,
 			BZ["Warsong Gulch"]..":wsg",
 			BZ["Arathi Basin"]..":ab",
-			BZ["Alterac Valley"]..":av"
+			BZ["Alterac Valley"]..":av",
 		
 		}
 		categories[L["Dungeons"]] = 
@@ -349,7 +355,7 @@ function vQueue_OnEvent(event)
 			BZ["Lower Blackrock Spire"]..":lbrs",
 			BZ["Dire Maul"]..":dem",
 			BZ["Stratholme"]..":strat",
-			BZ["Scholomance"]..":scholo"
+			BZ["Scholomance"]..":scholo",
 		}
 		categories[L["Dungeons TBC"]] = 
 		{
@@ -372,6 +378,9 @@ function vQueue_OnEvent(event)
 			BZ["Magisters' Terrace"]..":mt",
 		
 		}
+	
+
+					
 --[=[		categories[L["Quest Groups"]] =
 		{
 			expanded = false,
@@ -580,7 +589,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitle = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitle:ClearAllPoints()
 		vQueueFrame.hostTitle:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 0 , -vQueueFrame.hostlistTopSection:GetHeight()-2)
-		vQueueFrame.hostTitle:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitle:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitle:SetText(L["Name"])
 		vQueueFrame.hostTitle:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitle:SetPushedTextOffset(0,0)
@@ -591,7 +600,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitleLevel = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleLevel:ClearAllPoints()
 		vQueueFrame.hostTitleLevel:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 149, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleLevel:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleLevel:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleLevel:SetText(L["Level"])
 		vQueueFrame.hostTitleLevel:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleLevel:SetPushedTextOffset(0,0)
@@ -603,7 +612,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitleClass = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleClass:ClearAllPoints()
 		vQueueFrame.hostTitleClass:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 245, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleClass:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleClass:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleClass:SetText(L["Class"])
 		vQueueFrame.hostTitleClass:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleClass:SetPushedTextOffset(0,0)
@@ -613,7 +622,7 @@ function vQueue_OnEvent(event)
 		
 		vQueueFrame.hostTitleRole = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleRole:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 320, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleRole:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleRole:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleRole:SetText(L["Role"])
 		vQueueFrame.hostTitleRole:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleRole:SetPushedTextOffset(0,0)
@@ -626,7 +635,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitleFindName = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleFindName:ClearAllPoints()
 		vQueueFrame.hostTitleFindName:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 0, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleFindName:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleFindName:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleFindName:SetText(L["Title"])
 		vQueueFrame.hostTitleFindName:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleFindName:SetPushedTextOffset(0,0)
@@ -636,7 +645,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitleFindLeader = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleFindLeader:ClearAllPoints()
 		vQueueFrame.hostTitleFindLeader:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 209, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleFindLeader:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleFindLeader:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleFindLeader:SetText(L["Leader"])
 		vQueueFrame.hostTitleFindLeader:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleFindLeader:SetPushedTextOffset(0,0)
@@ -646,7 +655,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitleFindLevel = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleFindLevel:ClearAllPoints()
 		vQueueFrame.hostTitleFindLevel:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 278, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleFindLevel:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleFindLevel:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleFindLevel:SetText(L["Level"])
 		vQueueFrame.hostTitleFindLevel:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleFindLevel:SetPushedTextOffset(0,0)
@@ -656,7 +665,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitleFindSize = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleFindSize:ClearAllPoints()
 		vQueueFrame.hostTitleFindSize:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 312, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleFindSize:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleFindSize:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleFindSize:SetText(L["Size"])
 		vQueueFrame.hostTitleFindSize:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleFindSize:SetPushedTextOffset(0,0)
@@ -666,7 +675,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostTitleFindRoles = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.hostTitleFindRoles:ClearAllPoints()
 		vQueueFrame.hostTitleFindRoles:SetPoint("TOPLEFT", vQueueFrame.hostlist, "TOPLEFT", 361, -vQueueFrame.hostlistTopSection:GetHeight() - 2)
-		vQueueFrame.hostTitleFindRoles:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostTitleFindRoles:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostTitleFindRoles:SetText(L["Role(s)"])
 		vQueueFrame.hostTitleFindRoles:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostTitleFindRoles:SetPushedTextOffset(0,0)
@@ -773,7 +782,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostlistRoleText:ClearAllPoints()
 		vQueueFrame.hostlistRoleText:SetPoint("CENTER", vQueueFrame.hostlistTopSection, "CENTER", 0, 54)
 		vQueueFrame.hostlistRoleText:EnableMouse(false)
-		vQueueFrame.hostlistRoleText:SetFont("Fonts\\FRIZQT__.TTF", 10, "OUTLINE")
+		vQueueFrame.hostlistRoleText:SetFont("Fonts\\FRIZQT__.TTF", 8, "OUTLINE")
 		vQueueFrame.hostlistRoleText:SetText(L["(Select a role to start finding)"])
 		vQueueFrame.hostlistRoleText:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.hostlistRoleText:SetWidth(vQueueFrame.hostlistRoleText:GetTextWidth())
@@ -1030,7 +1039,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostlistNameField = CreateFrame("EditBox", nil, vQueueFrame.hostlist)
 		vQueueFrame.hostlistNameField:SetPoint("CENTER", vQueueFrame.hostlist, "CENTER", 0, 20)
 		vQueueFrame.hostlistNameField:SetAutoFocus(false)
-		vQueueFrame.hostlistNameField:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostlistNameField:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostlistNameField:SetTextColor(vQueueColors["WHITE"][1], vQueueColors["WHITE"][2], vQueueColors["WHITE"][3])
 		vQueueFrame.hostlistNameField:SetMaxLetters(36)
 		vQueueFrame.hostlistNameField:SetBackdrop(vQueueFrameBackdrop)
@@ -1054,7 +1063,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.hostlistLevelField = CreateFrame("EditBox", nil, vQueueFrame.hostlistNameField )
 		vQueueFrame.hostlistLevelField:SetPoint("TOPLEFT", vQueueFrame.hostlistNameField, "BOTTOMLEFT", 55, -6)
 		vQueueFrame.hostlistLevelField:SetAutoFocus(false)
-		vQueueFrame.hostlistLevelField:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.hostlistLevelField:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.hostlistLevelField:SetText(tostring(UnitLevel("player")))
 		vQueueFrame.hostlistLevelField:SetTextColor(vQueueColors["WHITE"][1], vQueueColors["WHITE"][2], vQueueColors["WHITE"][3])
 		vQueueFrame.hostlistLevelField:SetMaxLetters(2)
@@ -1089,7 +1098,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.replyFrame:SetBackdropColor(15/255, 15/255, 15/255, 0.9)
 		
 		vQueueFrame.replyFrameToString = vQueueFrame.replyFrame:CreateFontString(nil)
-		vQueueFrame.replyFrameToString:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.replyFrameToString:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.replyFrameToString:SetText(L["To:"])
 		vQueueFrame.replyFrameToString:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.replyFrameToString:SetWidth(vQueueFrame.replyFrameToString:GetStringWidth())
@@ -1117,7 +1126,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.replyFrameTo = CreateFrame("EditBox", nil, vQueueFrame.replyFrame )
 		vQueueFrame.replyFrameTo:SetPoint("TOPLEFT", vQueueFrame.replyFrame, "TOPLEFT", 25, -8)
 		vQueueFrame.replyFrameTo:SetAutoFocus(false)
-		vQueueFrame.replyFrameTo:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.replyFrameTo:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.replyFrameTo:SetText("LFM")
 		vQueueFrame.replyFrameTo:SetTextColor(vQueueColors["WHITE"][1], vQueueColors["WHITE"][2], vQueueColors["WHITE"][3])
 		vQueueFrame.replyFrameTo:SetMaxLetters(12)
@@ -1131,7 +1140,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.replyFrameMsg:SetPoint("TOPLEFT", vQueueFrame.replyFrame, "TOPLEFT", 5, -30)
 		vQueueFrame.replyFrameMsg:SetPoint("BOTTOMRIGHT", vQueueFrame.replyFrame, "BOTTOMRIGHT", -5, 20)
 		vQueueFrame.replyFrameMsg:SetAutoFocus(false)
-		vQueueFrame.replyFrameMsg:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.replyFrameMsg:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.replyFrameMsg:SetTextColor(vQueueColors["WHITE"][1], vQueueColors["WHITE"][2], vQueueColors["WHITE"][3])
 		vQueueFrame.replyFrameMsg:SetMaxLetters(200)
 		vQueueFrame.replyFrameMsg:SetBackdrop(vQueueFrameBackdrop)
@@ -1140,7 +1149,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.replyFrameMsg:SetTextInsets(5, 5, 5, 0)
 		
 		vQueueFrame.optionsFrameTopString = vQueueFrame.optionsFrame:CreateFontString(nil)
-		vQueueFrame.optionsFrameTopString:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.optionsFrameTopString:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.optionsFrameTopString:SetText("vQueue v" .. GetAddOnMetadata("vQueue", "Version") .." " .. L["Options"])
 		vQueueFrame.optionsFrameTopString:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.optionsFrameTopString:SetWidth(vQueueFrame.optionsFrameTopString:GetStringWidth())
@@ -1493,7 +1502,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.title = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		vQueueFrame.title:ClearAllPoints()
 		vQueueFrame.title:SetPoint("CENTER", vQueueFrame.hostlist, "TOP", 0 , 6)
-		vQueueFrame.title:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.title:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.title:SetText("vQueue")
 		vQueueFrame.title:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.title:SetPushedTextOffset(0,0)
@@ -1503,7 +1512,7 @@ function vQueue_OnEvent(event)
 		vQueueFrame.titleCat = CreateFrame("Button", "vQueueButton", vQueueFrame.catList)
 		vQueueFrame.titleCat:ClearAllPoints()
 		vQueueFrame.titleCat:SetPoint("CENTER", vQueueFrame.catList, "TOP", 0 , 6)
-		vQueueFrame.titleCat:SetFont("Fonts\\FRIZQT__.TTF", 10)
+		vQueueFrame.titleCat:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		vQueueFrame.titleCat:SetText(L["Categories"])
 		vQueueFrame.titleCat:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		vQueueFrame.titleCat:SetPushedTextOffset(0,0)
@@ -1934,7 +1943,7 @@ end
 
 function vQueue_createCategories(textKey)
 	newCatButton = CreateFrame("Button", "vQueueButton", vQueueFrame.catList)
-	newCatButton:SetFont("Fonts\\FRIZQT__.TTF", 10)
+	newCatButton:SetFont("Fonts\\FRIZQT__.TTF", 8)
 	newCatButton:SetText(textKey)
 	newCatButton:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 	newCatButton:SetWidth(newCatButton:GetTextWidth())
@@ -2302,7 +2311,7 @@ function vQueue_addToGroup(category, groupinfo)
 	if groups[category][args[2]] == nil then
 		newHostEntry = CreateFrame("Button", "vQueueButton", vQueueFrame.hostlist)
 		newHostEntry:SetFont("Interface\\AddOns\\vQueue\\media\\archangelsk.TTF", 10)
---		newHostEntry:SetFont("Fonts\\FRIZQT__.TTF", 10)
+--		newHostEntry:SetFont("Fonts\\FRIZQT__.TTF", 8)
 		newHostEntry:SetText(args[1])
 		newHostEntry:SetTextColor(vQueueColors["YELLOW"][1], vQueueColors["YELLOW"][2], vQueueColors["YELLOW"][3])
 		newHostEntry:SetHighlightTextColor(1, 1, 0)
