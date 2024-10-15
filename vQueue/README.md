@@ -1,5 +1,9 @@
 # vQueue - Group finder utility for Vanilla Wow
 
+### 2.0.0 
+Forked TBC Version from laytya/vQueue-TBC
+Added TBC raids
+
 ### v1.2.8
 
 - Added delete button to list of hosted groups
