@@ -1,6 +1,6 @@
-# vQueue - Group finder utility for Vanilla Wow
+# vQueue - Group finder utility for TBC
 
-### 2.0.0 
+### v2.0.0 
 Forked TBC Version from laytya/vQueue-TBC
 Added TBC raids
 
