@@ -317,10 +317,12 @@ function vQueue_OnEvent(event)
 			BZ["Temple of Ahn'Qiraj"]..":temple",
 			BZ["Naxxramas"]..":naxx",
 			BZ["Karazhan"]..":kara",
+			BZ["Gruul's Lair"]..":gruul",
+			BZ["Magtheridon's Lair"]..":maggy",
 			BZ["Serpentshrine Cavern"]..":ssc",
 			BZ["The Eye"]..":eye",
-			BZ["Gruul's Lair"]..":gruul",
-			BZ["Magtheridon's Lair"]..":maggy"
+			BZ["Black Temple"]..":blacktemple",
+			BZ["Hyjal Summit"]..":hyjal",
 		}
 		
 		categories[L["Battlegrounds"]] =

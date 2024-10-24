@@ -420,6 +420,15 @@ CATARGS = {
 		"tk",
 		"tempest keep"
 	},
+	["blacktemple"]={
+		"black temple",
+		"bt",
+		"illidan"
+	},
+	["hyjal"]={
+		"hyjal",
+		"mount hyjal"
+	}
 }
 
 local function MergeTables(a, b)
@@ -554,3 +563,5 @@ MINLVLS["gruul"] = 70
 MINLVLS["maggy"] = 70
 MINLVLS["ssc"] = 70
 MINLVLS["eye"] = 70
+MINLVLS["blacktemple"] = 70
+MINLVLS["hyjal"] = 70
